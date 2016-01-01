@@ -17,10 +17,22 @@
             * als TOHTML-Datenpunkte?
        Die Anzeige der Angaben nach Zeiten geordnet vorbereitet werden:
 
-        Kontoangaben vorbereitet werden: Derzeit gibt es keine Textstrukturen, die das deutlich machen. Am ehesten wären die "Gegenstände" zu gruppieren
+        Kontoangaben vorbereitet werden: Derzeit gibt es keine Textstrukturen, die das deutlich machen. Am ehesten wären die "Gegenstände" zu gruppieren.
             
         -->
         <xsl:apply-templates/>
+    </xsl:template>
+    <xsl:template match="t:date">
+        <xsl:copy>
+            <xsl:if test="not(@when)">
+                <!--
+                    eodem die => preceding::t:date[matches(@value,'^[1-9\-]')] 
+                    die XXVIII => $day: roman2int + $month=preceding:t:datei[matches(@value,'-[0-9][0-9]-')] + $year=preceding::t:date/@value/year()
+                    li die ultimo/primo => Monatstabelle für "ultimo"?
+                    li die XVII mensis marcii, III indictione, 1485 $month='mensis (.*?)[\.,; ]', $year=[0-9], $day= die (.*?)[\.,;?!/\[\]() $]
+                -->
+            </xsl:if>
+        </xsl:copy>
     </xsl:template>
     <xsl:template match="*" priority="-2">
         <xsl:copy>

@@ -10,6 +10,7 @@
 * Datumsangaben umrechnen?
 * "Konten" bilden: Monate? Generisch aus ancestor::div[1]/head ?
 * REM auf diese Art von Infos anpassen
+* Vindignatura = Weinlese
 -->
 <TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:rem="http://gams.uni-graz.at/rem/bookkeeping/#">
   <teiHeader>
@@ -35,7 +36,7 @@
       </fileDesc>
      <encodingDesc>
         <classDecl>
-           <taxonomy xml:id="currencies">
+           <taxonomy xml:id="units">
               <bibl>N.F. Faraglia, Storia dei prezzi in Napoli dal 1131 al 1860, Napoli, 1878, p. 22.</bibl>
               <category xml:id="unc.">
                  <catDesc ana="rem:conversion"><measure unit="unc." quantity="1" type="rem:monetaryValue">1 Oncia</measure> = <measure unit="duc." quantity="6" type="rem:monetaryValue">6 ducati</measure></catDesc>
